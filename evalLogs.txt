@@ -1,0 +1,96 @@
+:compileJava UP-TO-DATE
+:processResources UP-TO-DATE
+:classes UP-TO-DATE
+:evaluateINFO  18:37:44.616 [main] org.lenskit.cli.Main Starting LensKit 3.0-M2 on Java 1.8.0_171 from Oracle Corporation
+INFO  18:37:44.648 [main] org.lenskit.cli.Main Have 40 processors and heap limit of 116508 MiB
+INFO  18:37:44.648 [main] o.l.c.commands.TrainTest loading train-test configuration from /project/naray190/eval-assignment/build/evaluate-spec.json
+INFO  18:37:44.847 [main] o.l.d.d.f.TextEntitySource loading text file source ratings to read from file:/project/naray190/eval-assignment/data/ratings20Mfull.csv
+INFO  18:37:44.898 [main] o.l.d.d.f.TextEntitySource loading text file source movies to read from file:/project/naray190/eval-assignment/data/movies.csv
+INFO  18:37:44.900 [main] o.l.d.d.f.TextEntitySource loading text file source ratings to read from file:/project/naray190/eval-assignment/data/test_set_all.csv
+INFO  18:37:44.903 [main] o.l.d.d.f.TextEntitySource loading text file source movies to read from file:/project/naray190/eval-assignment/data/movies.csv
+INFO  18:37:45.108 [main] o.l.c.ConfigurationLoader loading script from file:/project/naray190/eval-assignment/etc/baselines.groovy
+INFO  18:37:45.410 [main] o.l.e.t.AlgorithmInstance loaded 1 algorithms from /project/naray190/eval-assignment/etc/baselines.groovy
+INFO  18:37:45.416 [main] o.l.c.ConfigurationLoader loading script from file:/project/naray190/eval-assignment/etc/eval.groovy
+INFO  18:37:45.513 [main] o.l.e.t.AlgorithmInstance loaded 3 algorithms from /project/naray190/eval-assignment/etc/eval.groovy
+INFO  18:37:45.689 [main] o.l.e.t.TrainTestExperiment running with 3 threads
+INFO  18:40:05.426 [ForkJoinPool-1-worker-2] o.l.d.d.f.StaticDataSource deriving entity type EntityType[user] from EntityType[rating] (column TypedName[user: long])
+INFO  18:40:12.134 [ForkJoinPool-1-worker-2] o.l.d.d.f.StaticDataSource deriving entity type EntityType[item] from EntityType[rating] (column TypedName[item: long])
+INFO  18:40:21.620 [ForkJoinPool-1-worker-2] o.l.e.t.ExperimentJob Building Algorithm(ItemItem)[Algorithm=ItemItem] on DataSet(null)[DataSet=null]
+INFO  18:40:21.620 [ForkJoinPool-1-worker-1] o.l.e.t.ExperimentJob Building Algorithm(BiasScorer)[Algorithm=BiasScorer] on DataSet(null)[DataSet=null]
+INFO  18:40:21.620 [ForkJoinPool-1-worker-3] o.l.e.t.ExperimentJob Building Algorithm(SVDPersMean)[Algorithm=SVDPersMean, FeatureCount=100] on DataSet(null)[DataSet=null]
+INFO  18:40:21.827 [ForkJoinPool-1-worker-1] o.l.e.t.ExperimentJob Built BiasScorer in 205.7 ms
+INFO  18:40:21.828 [ForkJoinPool-1-worker-1] o.l.e.t.ExperimentJob Measuring BiasScorer on null
+INFO  18:40:22.188 [ForkJoinPool-1-worker-1] o.l.d.d.f.StaticDataSource deriving entity type EntityType[user] from EntityType[rating] (column TypedName[user: long])
+INFO  18:40:22.202 [ForkJoinPool-1-worker-1] o.l.d.d.f.StaticDataSource deriving entity type EntityType[item] from EntityType[rating] (column TypedName[item: long])
+INFO  18:40:22.238 [ForkJoinPool-1-worker-1] o.l.e.t.ExperimentJob Testing Algorithm(BiasScorer)[Algorithm=BiasScorer] on DataSet(null)[DataSet=null] (999 users)
+INFO  18:40:23.630 [ForkJoinPool-1-worker-1] o.l.e.t.ExperimentJob testing users: finished 100 of 999 (10.01%, 0.014s/row, ETA 12.501s)
+INFO  18:40:24.414 [ForkJoinPool-1-worker-3] o.l.e.t.ExperimentJob Built SVDPersMean in 2.793 s
+INFO  18:40:24.415 [ForkJoinPool-1-worker-3] o.l.e.t.ExperimentJob Measuring SVDPersMean on null
+INFO  18:40:24.420 [ForkJoinPool-1-worker-3] o.l.e.t.ExperimentJob Testing Algorithm(SVDPersMean)[Algorithm=SVDPersMean, FeatureCount=100] on DataSet(null)[DataSet=null] (999 users)
+INFO  18:40:24.921 [ForkJoinPool-1-worker-1] o.l.e.t.ExperimentJob testing users: finished 200 of 999 (20.02%, 0.013s/row, ETA 10.715s)
+INFO  18:40:26.205 [ForkJoinPool-1-worker-1] o.l.e.t.ExperimentJob testing users: finished 300 of 999 (30.03%, 0.013s/row, ETA 9.241s)
+INFO  18:40:27.437 [ForkJoinPool-1-worker-1] o.l.e.t.ExperimentJob testing users: finished 400 of 999 (40.04%, 0.013s/row, ETA 7.784s)
+INFO  18:40:28.752 [ForkJoinPool-1-worker-1] o.l.e.t.ExperimentJob testing users: finished 500 of 999 (50.05%, 0.013s/row, ETA 6.500s)
+INFO  18:40:30.211 [ForkJoinPool-1-worker-1] o.l.e.t.ExperimentJob testing users: finished 600 of 999 (60.06%, 0.013s/row, ETA 5.301s)
+INFO  18:40:31.751 [ForkJoinPool-1-worker-1] o.l.e.t.ExperimentJob testing users: finished 700 of 999 (70.07%, 0.014s/row, ETA 4.063s)
+INFO  18:40:33.240 [ForkJoinPool-1-worker-1] o.l.e.t.ExperimentJob testing users: finished 800 of 999 (80.08%, 0.014s/row, ETA 2.736s)
+INFO  18:40:33.250 [ForkJoinPool-1-worker-3] o.l.e.t.ExperimentJob testing users: finished 100 of 999 (10.01%, 0.088s/row, ETA  1m19.376s)
+INFO  18:40:34.722 [ForkJoinPool-1-worker-1] o.l.e.t.ExperimentJob testing users: finished 900 of 999 (90.09%, 0.014s/row, ETA 1.373s)
+INFO  18:40:36.237 [ForkJoinPool-1-worker-1] o.l.e.t.ExperimentJob Tested BiasScorer in 14.00 s
+INFO  18:40:36.238 [ForkJoinPool-1-worker-1] o.l.e.t.p.RMSEPredictMetric RMSE: 0.9075147526084443
+INFO  18:40:36.238 [ForkJoinPool-1-worker-1] o.l.e.t.p.MAEPredictMetric RMSE: 0.6908385129553101
+INFO  18:40:36.241 [ForkJoinPool-1-worker-1] o.l.e.t.TrainTestExperiment job 1 of 4 (org.lenskit.eval.traintest.ExperimentJob@132a041) finished
+INFO  18:40:36.241 [ForkJoinPool-1-worker-1] o.l.e.t.ExperimentJob Building Algorithm(SVDPersMean)[Algorithm=SVDPersMean, FeatureCount=30] on DataSet(null)[DataSet=null]
+INFO  18:40:37.847 [ForkJoinPool-1-worker-1] o.l.e.t.ExperimentJob Built SVDPersMean in 1.606 s
+INFO  18:40:37.849 [ForkJoinPool-1-worker-1] o.l.e.t.ExperimentJob Measuring SVDPersMean on null
+INFO  18:40:37.854 [ForkJoinPool-1-worker-1] o.l.e.t.ExperimentJob Testing Algorithm(SVDPersMean)[Algorithm=SVDPersMean, FeatureCount=30] on DataSet(null)[DataSet=null] (999 users)
+INFO  18:40:48.083 [ForkJoinPool-1-worker-3] o.l.e.t.ExperimentJob testing users: finished 200 of 999 (20.02%, 0.118s/row, ETA  1m34.530s)
+INFO  18:40:48.619 [ForkJoinPool-1-worker-1] o.l.e.t.ExperimentJob testing users: finished 100 of 999 (10.01%, 0.108s/row, ETA  1m36.771s)
+INFO  18:40:55.528 [ForkJoinPool-1-worker-1] o.l.e.t.ExperimentJob testing users: finished 200 of 999 (20.02%, 0.088s/row, ETA  1m10.602s)
+INFO  18:40:57.676 [ForkJoinPool-1-worker-3] o.l.e.t.ExperimentJob testing users: finished 300 of 999 (30.03%, 0.111s/row, ETA  1m17.486s)
+INFO  18:41:02.680 [ForkJoinPool-1-worker-1] o.l.e.t.ExperimentJob testing users: finished 300 of 999 (30.03%, 0.083s/row, ETA 57.840s)
+INFO  18:41:08.425 [ForkJoinPool-1-worker-3] o.l.e.t.ExperimentJob testing users: finished 400 of 999 (40.04%, 0.110s/row, ETA  1m5.897s)
+INFO  18:41:09.811 [ForkJoinPool-1-worker-1] o.l.e.t.ExperimentJob testing users: finished 400 of 999 (40.04%, 0.080s/row, ETA 47.854s)
+INFO  18:41:17.217 [ForkJoinPool-1-worker-1] o.l.e.t.ExperimentJob testing users: finished 500 of 999 (50.05%, 0.079s/row, ETA 39.283s)
+INFO  18:41:18.610 [ForkJoinPool-1-worker-3] o.l.e.t.ExperimentJob testing users: finished 500 of 999 (50.05%, 0.108s/row, ETA 54.081s)
+INFO  18:41:24.217 [ForkJoinPool-1-worker-1] o.l.e.t.ExperimentJob testing users: finished 600 of 999 (60.06%, 0.077s/row, ETA 30.831s)
+INFO  18:41:28.818 [ForkJoinPool-1-worker-3] o.l.e.t.ExperimentJob testing users: finished 600 of 999 (60.06%, 0.107s/row, ETA 42.824s)
+INFO  18:41:31.013 [ForkJoinPool-1-worker-1] o.l.e.t.ExperimentJob testing users: finished 700 of 999 (70.07%, 0.076s/row, ETA 22.706s)
+INFO  18:41:38.306 [ForkJoinPool-1-worker-1] o.l.e.t.ExperimentJob testing users: finished 800 of 999 (80.08%, 0.076s/row, ETA 15.037s)
+INFO  18:41:38.669 [ForkJoinPool-1-worker-3] o.l.e.t.ExperimentJob testing users: finished 700 of 999 (70.07%, 0.106s/row, ETA 31.715s)
+INFO  18:41:58.069 [ForkJoinPool-1-worker-1] o.l.e.t.ExperimentJob testing users: finished 900 of 999 (90.09%, 0.089s/row, ETA 8.824s)
+INFO  18:42:01.937 [ForkJoinPool-1-worker-3] o.l.e.t.ExperimentJob testing users: finished 800 of 999 (80.08%, 0.122s/row, ETA 24.257s)
+INFO  18:42:04.504 [ForkJoinPool-1-worker-1] o.l.e.t.ExperimentJob Tested SVDPersMean in 1.444 min
+INFO  18:42:04.504 [ForkJoinPool-1-worker-1] o.l.e.t.p.RMSEPredictMetric RMSE: 0.7027286804406783
+INFO  18:42:04.504 [ForkJoinPool-1-worker-1] o.l.e.t.p.MAEPredictMetric RMSE: 0.5336654984540513
+INFO  18:42:04.505 [ForkJoinPool-1-worker-1] o.l.e.t.TrainTestExperiment job 2 of 4 (org.lenskit.eval.traintest.ExperimentJob@5dc21c64) finished
+INFO  18:42:11.527 [ForkJoinPool-1-worker-3] o.l.e.t.ExperimentJob testing users: finished 900 of 999 (90.09%, 0.119s/row, ETA 11.782s)
+INFO  18:42:20.310 [ForkJoinPool-1-worker-3] o.l.e.t.ExperimentJob Tested SVDPersMean in 1.931 min
+INFO  18:42:20.310 [ForkJoinPool-1-worker-3] o.l.e.t.p.RMSEPredictMetric RMSE: 0.6198150241332878
+INFO  18:42:20.310 [ForkJoinPool-1-worker-3] o.l.e.t.p.MAEPredictMetric RMSE: 0.4709600541841634
+INFO  18:42:20.311 [ForkJoinPool-1-worker-3] o.l.e.t.TrainTestExperiment job 3 of 4 (org.lenskit.eval.traintest.ExperimentJob@6209c1c1) finished
+INFO  18:42:23.362 [ForkJoinPool-1-worker-2] o.l.e.t.ExperimentJob Built ItemItem in 2.029 min
+INFO  18:42:23.362 [ForkJoinPool-1-worker-2] o.l.e.t.ExperimentJob Measuring ItemItem on null
+INFO  18:42:23.371 [ForkJoinPool-1-worker-2] o.l.e.t.ExperimentJob Testing Algorithm(ItemItem)[Algorithm=ItemItem] on DataSet(null)[DataSet=null] (999 users)
+INFO  19:01:00.595 [ForkJoinPool-1-worker-2] o.l.e.t.ExperimentJob testing users: finished 100 of 999 (10.01%, 11.172s/row, ETA 2h47m23.832s)
+INFO  19:18:51.785 [ForkJoinPool-1-worker-2] o.l.e.t.ExperimentJob testing users: finished 200 of 999 (20.02%, 10.942s/row, ETA 2h25m42.708s)
+INFO  19:36:37.870 [ForkJoinPool-1-worker-2] o.l.e.t.ExperimentJob testing users: finished 300 of 999 (30.03%, 10.848s/row, ETA 2h 6m22.980s)
+INFO  19:54:33.805 [ForkJoinPool-1-worker-2] o.l.e.t.ExperimentJob testing users: finished 400 of 999 (40.04%, 10.826s/row, ETA 1h48m4.823s)
+INFO  20:12:21.450 [ForkJoinPool-1-worker-2] o.l.e.t.ExperimentJob testing users: finished 500 of 999 (50.05%, 10.796s/row, ETA 1h29m47.281s)
+INFO  20:28:58.832 [ForkJoinPool-1-worker-2] o.l.e.t.ExperimentJob testing users: finished 600 of 999 (60.06%, 10.659s/row, ETA 1h10m52.981s)
+INFO  20:46:00.465 [ForkJoinPool-1-worker-2] o.l.e.t.ExperimentJob testing users: finished 700 of 999 (70.07%, 10.596s/row, ETA 52m48.158s)
+INFO  21:02:54.284 [ForkJoinPool-1-worker-2] o.l.e.t.ExperimentJob testing users: finished 800 of 999 (80.08%, 10.539s/row, ETA 34m57.189s)
+INFO  21:20:49.465 [ForkJoinPool-1-worker-2] o.l.e.t.ExperimentJob testing users: finished 900 of 999 (90.09%, 10.562s/row, ETA 17m25.670s)
+INFO  21:39:08.580 [ForkJoinPool-1-worker-2] o.l.e.t.ExperimentJob Tested ItemItem in 2.946 h
+INFO  21:39:08.580 [ForkJoinPool-1-worker-2] o.l.e.t.p.RMSEPredictMetric RMSE: 0.8648500032676801
+INFO  21:39:08.581 [ForkJoinPool-1-worker-2] o.l.e.t.p.MAEPredictMetric RMSE: 0.6493257033880365
+INFO  21:39:08.582 [ForkJoinPool-1-worker-2] o.l.e.t.TrainTestExperiment job 4 of 4 (org.lenskit.eval.traintest.ExperimentJob@2452c811) finished
+INFO  21:39:08.583 [main] o.l.e.t.TrainTestExperiment train-test evaluation complete
+INFO  21:39:08.622 [main] org.lenskit.cli.Main If you use LensKit in published research, please see http://lenskit.org/research/
+
+
+BUILD SUCCESSFUL
+
+Total time: 3 hrs 1 mins 29.686 secs
+
+This build could be faster, please consider using the Gradle Daemon: https://docs.gradle.org/2.14/userguide/gradle_daemon.html

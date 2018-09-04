@@ -1,0 +1,124 @@
+buildscript {
+    repositories {
+        // LensKit snapshots are published to the Sonatype snapshot repository
+        maven {
+            url 'https://oss.sonatype.org/content/repositories/snapshots/'
+        }
+        // LensKit releases are published to Maven Central
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'org.lenskit:lenskit-gradle:3.0-M2'
+    }
+}
+
+ext.lenskitVersion = '3.0-M2'
+if (!hasProperty('dataDir')) {
+    ext.dataDir = 'data'
+}
+ext.userIds = (project.findProperty('userId') ?: '320').split(/,/).toList()
+ext.itemIds = (project.findProperty('itemIds') ?: '260,153,527,588').split(/,/).toList()
+ext.biasModel = project.findProperty('biasModel') ?: 'user-item'
+
+
+apply plugin: 'java'
+apply plugin: 'lenskit'
+
+apply from: "$rootDir/gradle/repositories.gradle"
+
+dependencies {
+    // Code needs to build with LensKit.
+    compile "org.lenskit:lenskit-all:$lenskitVersion"
+    compile "org.apache.lucene:lucene-analyzers:3.5.0"
+    compile "org.apache.lucene:lucene-queries:3.5.0"
+
+    // To run the code, we also need the LensKit CLI.
+    runtime "org.lenskit:lenskit-cli:$lenskitVersion"
+
+    // Tests use JUnit
+    testCompile "junit:junit:4.12"
+}
+
+/* Configure LensKit */
+lenskit {
+    // you can configure the threadCount and maxMemory here, or on the command line
+    // e.g. -Plenskit.threadCount=8
+    maxMemory '128g'
+    threadCount 3
+}
+
+import org.lenskit.gradle.Crossfold
+
+test {
+    systemProperty 'data.dir', dataDir
+}
+
+task predict (type:JavaExec){
+    main  'org.lenskit.mooc.Predictions'
+    classpath sourceSets.main.runtimeClasspath
+
+
+}
+task getvectors (type:JavaExec){
+    main "org.lenskit.mooc.GetSVDVectors"
+    classpath sourceSets.main.runtimeClasspath
+    args System.getProperty("exec.args", "").split()
+}
+
+
+task detailpredict (type:JavaExec){
+    main "org.lenskit.mooc.DetailPredictions"
+    classpath sourceSets.main.runtimeClasspath
+    args System.getProperty("exec.args", "").split()
+}
+import org.lenskit.gradle.TrainTest
+
+task trainModel(type: JavaExec, group: 'run') {
+    classpath sourceSets.main.runtimeClasspath
+    main 'org.lenskit.cli.Main'
+    args '--log-file', file("$buildDir/train-model.log"), '--log-file-level', 'DEBUG'
+    args 'train-model'
+    args '--data-source', file("$dataDir/poptrain.yml")
+    args '-o', "$buildDir/user-item-bias.bin"
+    args file('etc/eval.groovy')
+    args file("etc/user-item-bias.groovy")
+
+    if (lenskit.maxMemory) {
+        maxHeapSize lenskit.maxMemory
+    }
+}
+
+
+task evaluate(type: TrainTest, group: 'evaluate') {
+    description 'Runs the LensKit evaluation.'
+
+    // we add our crossfold task as evaluation input
+    dataSet {
+        trainSource '/project/naray190/dr-project/data/poptrain.yml'
+        testSource '/project/naray190/dr-project/data/fulltest.yml'
+    }
+
+    // send the output to appropriate files
+    outputFile 'build/eval-results-users-pop-testfullf2025303540100-20M-damp-normscorer.csv'
+    userOutputFile 'build/eval-users-test-testfullf2025303540100-20M-damp-normscorer.csv'
+
+    // configure our algorithms
+    algorithm 'etc/baselines.groovy'
+    algorithm 'etc/eval.groovy'
+    cacheDirectory "$buildDir/eval-cache"
+
+    // and some evaluation tasks and metrics
+    predict {
+        metric 'coverage'
+        metric 'rmse'
+        metric 'ndcg'
+        metric 'mae'
+    }
+    recommend {
+        listSize 10
+        metric 'ndcg'
+        metric 'map'
+        metric 'mrr'
+    }
+}
+/* Run the LensKit evaluation */

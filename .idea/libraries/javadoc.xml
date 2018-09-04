@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="javadoc">
+    <CLASSES />
+    <JAVADOC>
+      <root url="file://$PROJECT_DIR$/../lenskit-2.2.1/javadoc" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>

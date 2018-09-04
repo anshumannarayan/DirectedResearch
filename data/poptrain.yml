@@ -1,0 +1,13 @@
+ratings:
+  type: textfile
+  file: ratings20Mpoponlyforsample.csv
+  format: csv
+  entity_type: rating
+  header: true
+movies:
+  type: textfile
+  file: movies.csv
+  format: csv
+  entity_type: item
+  header: true
+  columns: [id, name]

@@ -1,0 +1,687 @@
+:compileJava UP-TO-DATE
+:processResources UP-TO-DATE
+:classes UP-TO-DATE
+:evaluateINFO  15:54:11.987 [main] org.lenskit.cli.Main Starting LensKit 3.0-M2 on Java 1.8.0_171 from Oracle Corporation
+INFO  15:54:12.014 [main] org.lenskit.cli.Main Have 40 processors and heap limit of 116508 MiB
+INFO  15:54:12.015 [main] o.l.c.commands.TrainTest loading train-test configuration from /project/naray190/eval-assignment/build/evaluate-spec.json
+INFO  15:54:12.197 [main] o.l.d.d.f.TextEntitySource loading text file source ratings to read from file:/home/naray190/eval-assignment/data/ratings20Mfull.csv
+INFO  15:54:12.247 [main] o.l.d.d.f.TextEntitySource loading text file source movies to read from file:/home/naray190/eval-assignment/data/movies.csv
+INFO  15:54:12.249 [main] o.l.d.d.f.TextEntitySource loading text file source ratings to read from file:/home/naray190/eval-assignment/data/test_set_all.csv
+INFO  15:54:12.252 [main] o.l.d.d.f.TextEntitySource loading text file source movies to read from file:/home/naray190/eval-assignment/data/movies.csv
+INFO  15:54:12.457 [main] o.l.c.ConfigurationLoader loading script from file:/project/naray190/eval-assignment/etc/baselines.groovy
+INFO  15:54:12.745 [main] o.l.e.t.AlgorithmInstance loaded 1 algorithms from /project/naray190/eval-assignment/etc/baselines.groovy
+INFO  15:54:12.751 [main] o.l.c.ConfigurationLoader loading script from file:/project/naray190/eval-assignment/etc/eval.groovy
+INFO  15:54:12.834 [main] o.l.e.t.AlgorithmInstance loaded 2 algorithms from /project/naray190/eval-assignment/etc/eval.groovy
+INFO  15:54:12.981 [main] o.l.e.t.TrainTestExperiment running with 3 threads
+INFO  15:56:39.356 [ForkJoinPool-1-worker-1] o.l.d.d.f.StaticDataSource deriving entity type EntityType[user] from EntityType[rating] (column TypedName[user: long])
+INFO  15:56:44.718 [ForkJoinPool-1-worker-1] o.l.d.d.f.StaticDataSource deriving entity type EntityType[item] from EntityType[rating] (column TypedName[item: long])
+INFO  15:56:53.007 [ForkJoinPool-1-worker-2] o.l.e.t.ExperimentJob Building Algorithm(ItemItem)[Algorithm=ItemItem] on DataSet(null)[DataSet=null]
+INFO  15:56:53.007 [ForkJoinPool-1-worker-1] o.l.e.t.ExperimentJob Building Algorithm(BiasScorer)[Algorithm=BiasScorer] on DataSet(null)[DataSet=null]
+INFO  15:56:53.007 [ForkJoinPool-1-worker-3] o.l.e.t.ExperimentJob Building Algorithm(SVDPersMean)[Algorithm=SVDPersMean, FeatureCount=100] on DataSet(null)[DataSet=null]
+INFO  15:56:53.161 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemBuildContextProvider constructing build context
+INFO  15:56:57.098 [ForkJoinPool-1-worker-1] o.l.d.r.RatingSummaryProvider summarized 49716 items with 24463413 ratings
+INFO  15:56:57.206 [ForkJoinPool-1-worker-1] o.l.e.t.ComponentCache wrote object org.lenskit.data.ratings.RatingSummary@7f996e44 to cache as 9c4bf7924254f00e81fbe0e90d22da3d04d642ac (351710 bytes)
+INFO  15:56:57.344 [ForkJoinPool-1-worker-3] o.l.e.t.ComponentCache wrote object ItemMeanRatingItemScorer(µ=3.526, γ=0.00) to cache as 3e6abb2b2dbe835a4c06c97de98289f50c3940cc (351790 bytes)
+INFO  15:57:21.030 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Building SVD with 100 features for 24463413 ratings
+INFO  15:57:23.047 [ForkJoinPool-1-worker-1] o.l.e.t.ComponentCache wrote object org.lenskit.bias.UserItemBiasModel@39584d17 to cache as d2e954e65bed788df7152b39e47d53993f979236 (2514222 bytes)
+INFO  15:57:23.049 [ForkJoinPool-1-worker-1] o.l.e.t.ExperimentJob Built BiasScorer in 30.04 s
+INFO  15:57:23.050 [ForkJoinPool-1-worker-1] o.l.e.t.ExperimentJob Measuring BiasScorer on null
+INFO  15:57:23.367 [ForkJoinPool-1-worker-1] o.l.d.d.f.StaticDataSource deriving entity type EntityType[user] from EntityType[rating] (column TypedName[user: long])
+INFO  15:57:23.377 [ForkJoinPool-1-worker-1] o.l.d.d.f.StaticDataSource deriving entity type EntityType[item] from EntityType[rating] (column TypedName[item: long])
+INFO  15:57:23.404 [ForkJoinPool-1-worker-1] o.l.e.t.ExperimentJob Testing Algorithm(BiasScorer)[Algorithm=BiasScorer] on DataSet(null)[DataSet=null] (999 users)
+INFO  15:57:24.812 [ForkJoinPool-1-worker-1] o.l.e.t.ExperimentJob testing users: finished 100 of 999 (10.01%, 0.014s/row, ETA 12.648s)
+INFO  15:57:26.222 [ForkJoinPool-1-worker-1] o.l.e.t.ExperimentJob testing users: finished 200 of 999 (20.02%, 0.014s/row, ETA 11.252s)
+INFO  15:57:27.618 [ForkJoinPool-1-worker-1] o.l.e.t.ExperimentJob testing users: finished 300 of 999 (30.03%, 0.014s/row, ETA 9.814s)
+INFO  15:57:28.940 [ForkJoinPool-1-worker-1] o.l.e.t.ExperimentJob testing users: finished 400 of 999 (40.04%, 0.014s/row, ETA 8.288s)
+INFO  15:57:30.307 [ForkJoinPool-1-worker-1] o.l.e.t.ExperimentJob testing users: finished 500 of 999 (50.05%, 0.014s/row, ETA 6.887s)
+INFO  15:57:31.640 [ForkJoinPool-1-worker-1] o.l.e.t.ExperimentJob testing users: finished 600 of 999 (60.06%, 0.014s/row, ETA 5.476s)
+INFO  15:57:32.937 [ForkJoinPool-1-worker-1] o.l.e.t.ExperimentJob testing users: finished 700 of 999 (70.07%, 0.014s/row, ETA 4.071s)
+INFO  15:57:34.240 [ForkJoinPool-1-worker-1] o.l.e.t.ExperimentJob testing users: finished 800 of 999 (80.08%, 0.014s/row, ETA 2.695s)
+INFO  15:57:35.605 [ForkJoinPool-1-worker-1] o.l.e.t.ExperimentJob testing users: finished 900 of 999 (90.09%, 0.014s/row, ETA 1.342s)
+INFO  15:57:36.949 [ForkJoinPool-1-worker-1] o.l.e.t.ExperimentJob Tested BiasScorer in 13.55 s
+INFO  15:57:36.949 [ForkJoinPool-1-worker-1] o.l.e.t.p.RMSEPredictMetric RMSE: 0.9075147526084443
+INFO  15:57:36.950 [ForkJoinPool-1-worker-1] o.l.e.t.p.MAEPredictMetric RMSE: 0.6908385129553101
+INFO  15:57:36.952 [ForkJoinPool-1-worker-1] o.l.e.t.TrainTestExperiment job 1 of 3 (org.lenskit.eval.traintest.ExperimentJob@66d3db03) finished
+INFO  15:58:01.135 [ForkJoinPool-1-worker-2] o.l.e.t.ComponentCache wrote object org.lenskit.knn.item.model.ItemItemBuildContext@562c6cf4 to cache as 598952df9c46c8302111effe156e06f8cf04d380 (262617144 bytes)
+INFO  15:58:03.807 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider building item-item model for 49716 items
+INFO  15:59:08.049 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 0 in 00:01:02.736
+INFO  15:59:10.416 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 100 of 49716 (0.20%, 0.666s/row, ETA 9h10m42.411s)
+INFO  15:59:58.917 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 200 of 49716 (0.40%, 0.575s/row, ETA 7h54m56.024s)
+INFO  16:00:09.938 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 1 in 00:01:01.884
+INFO  16:00:51.896 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 300 of 49716 (0.60%, 0.560s/row, ETA 7h41m25.568s)
+INFO  16:01:10.779 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 2 in 00:01:00.840
+INFO  16:01:55.905 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 400 of 49716 (0.80%, 0.580s/row, ETA 7h56m53.954s)
+INFO  16:02:11.200 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 3 in 00:01:00.420
+INFO  16:02:41.010 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 500 of 49716 (1.01%, 0.554s/row, ETA 7h34m44.487s)
+INFO  16:03:11.753 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 4 in 00:01:00.552
+INFO  16:03:49.310 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 600 of 49716 (1.21%, 0.576s/row, ETA 7h51m21.880s)
+INFO  16:04:12.104 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 5 in 00:01:00.348
+INFO  16:04:15.083 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 700 of 49716 (1.41%, 0.530s/row, ETA 7h13m16.956s)
+INFO  16:04:52.450 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 800 of 49716 (1.61%, 0.511s/row, ETA 6h56m25.742s)
+INFO  16:05:12.436 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 6 in 00:01:00.331
+INFO  16:05:30.453 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 900 of 49716 (1.81%, 0.496s/row, ETA 6h43m45.411s)
+INFO  16:06:06.412 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 1000 of 49716 (2.01%, 0.483s/row, ETA 6h31m49.995s)
+INFO  16:06:12.635 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 7 in 00:01:00.197
+INFO  16:07:02.951 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 1100 of 49716 (2.21%, 0.490s/row, ETA 6h37m7.652s)
+INFO  16:07:13.080 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 8 in 00:01:00.445
+INFO  16:08:13.333 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 9 in 00:01:00.252
+INFO  16:08:28.678 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 1200 of 49716 (2.41%, 0.521s/row, ETA 7h 1m3.041s)
+INFO  16:09:13.641 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 10 in 00:01:00.305
+INFO  16:09:57.807 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 1300 of 49716 (2.61%, 0.549s/row, ETA 7h23m11.126s)
+INFO  16:10:13.763 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 11 in 00:01:00.119
+INFO  16:10:49.086 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 1400 of 49716 (2.82%, 0.547s/row, ETA 7h20m10.441s)
+INFO  16:11:14.156 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 12 in 00:01:00.392
+INFO  16:11:18.628 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 1500 of 49716 (3.02%, 0.530s/row, ETA 7h 5m48.325s)
+INFO  16:12:03.982 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 1600 of 49716 (3.22%, 0.525s/row, ETA 7h 1m5.801s)
+INFO  16:12:13.874 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 13 in 00:00:59.716
+INFO  16:12:48.475 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 1700 of 49716 (3.42%, 0.520s/row, ETA 6h56m26.842s)
+INFO  16:13:08.540 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 1800 of 49716 (3.62%, 0.503s/row, ETA 6h41m23.671s)
+INFO  16:13:13.363 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 14 in 00:00:59.489
+INFO  16:13:58.101 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 1900 of 49716 (3.82%, 0.502s/row, ETA 6h40m15.752s)
+INFO  16:14:16.965 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 15 in 00:01:03.600
+INFO  16:14:48.260 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 2000 of 49716 (4.02%, 0.502s/row, ETA 6h39m23.956s)
+INFO  16:15:17.147 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 16 in 00:01:00.181
+INFO  16:15:32.607 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 2100 of 49716 (4.22%, 0.499s/row, ETA 6h36m20.527s)
+INFO  16:15:56.225 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 2200 of 49716 (4.43%, 0.487s/row, ETA 6h26m2.019s)
+INFO  16:16:16.787 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 17 in 00:00:59.639
+INFO  16:16:39.306 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 2300 of 49716 (4.63%, 0.485s/row, ETA 6h23m16.490s)
+INFO  16:17:16.456 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 18 in 00:00:59.668
+INFO  16:17:20.810 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 2400 of 49716 (4.83%, 0.482s/row, ETA 6h20m10.087s)
+INFO  16:17:53.944 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 2500 of 49716 (5.03%, 0.476s/row, ETA 6h14m37.177s)
+INFO  16:18:16.249 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 19 in 00:00:59.792
+INFO  16:18:24.946 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 2600 of 49716 (5.23%, 0.470s/row, ETA 6h 8m48.697s)
+INFO  16:19:13.386 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 2700 of 49716 (5.43%, 0.470s/row, ETA 6h 8m27.402s)
+INFO  16:19:16.177 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 20 in 00:00:59.927
+INFO  16:19:44.134 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 2800 of 49716 (5.63%, 0.464s/row, ETA 6h 3m7.703s)
+INFO  16:20:16.249 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 21 in 00:01:00.070
+INFO  16:20:18.712 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 2900 of 49716 (5.83%, 0.460s/row, ETA 5h59m9.772s)
+INFO  16:20:51.910 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 3000 of 49716 (6.03%, 0.456s/row, ETA 5h55m3.919s)
+INFO  16:21:16.072 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 22 in 00:00:59.822
+INFO  16:21:22.190 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 3100 of 49716 (6.24%, 0.451s/row, ETA 5h50m27.901s)
+INFO  16:21:50.533 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 3200 of 49716 (6.44%, 0.446s/row, ETA 5h45m39.079s)
+INFO  16:22:09.805 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 3300 of 49716 (6.64%, 0.438s/row, ETA 5h38m58.458s)
+INFO  16:22:15.818 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 23 in 00:00:59.745
+INFO  16:22:33.462 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 3400 of 49716 (6.84%, 0.432s/row, ETA 5h33m40.007s)
+INFO  16:22:58.644 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 3500 of 49716 (7.04%, 0.427s/row, ETA 5h28m58.522s)
+INFO  16:23:15.381 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 24 in 00:00:59.562
+INFO  16:23:20.039 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 3600 of 49716 (7.24%, 0.421s/row, ETA 5h23m42.784s)
+INFO  16:23:47.473 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 3700 of 49716 (7.44%, 0.417s/row, ETA 5h19m58.049s)
+INFO  16:24:08.606 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 3800 of 49716 (7.64%, 0.412s/row, ETA 5h15m7.567s)
+INFO  16:24:14.973 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 25 in 00:00:59.591
+INFO  16:24:29.339 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 3900 of 49716 (7.84%, 0.407s/row, ETA 5h10m26.201s)
+INFO  16:25:06.044 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 4000 of 49716 (8.05%, 0.406s/row, ETA 5h 9m0.410s)
+INFO  16:25:14.525 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 26 in 00:00:59.551
+INFO  16:25:20.132 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 4100 of 49716 (8.25%, 0.399s/row, ETA 5h 3m25.380s)
+INFO  16:25:40.049 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 4200 of 49716 (8.45%, 0.394s/row, ETA 4h59m8.800s)
+INFO  16:26:03.473 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 4300 of 49716 (8.65%, 0.391s/row, ETA 4h55m40.271s)
+INFO  16:26:14.859 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 27 in 00:01:00.333
+INFO  16:26:16.800 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 4400 of 49716 (8.85%, 0.385s/row, ETA 4h50m36.174s)
+INFO  16:26:29.868 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 4500 of 49716 (9.05%, 0.379s/row, ETA 4h45m42.386s)
+INFO  16:26:42.818 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 4600 of 49716 (9.25%, 0.374s/row, ETA 4h40m59.644s)
+INFO  16:26:58.056 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 4700 of 49716 (9.45%, 0.369s/row, ETA 4h36m50.306s)
+INFO  16:27:13.833 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 4800 of 49716 (9.65%, 0.365s/row, ETA 4h32m55.760s)
+INFO  16:27:14.709 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 28 in 00:00:59.849
+INFO  16:27:36.508 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 4900 of 49716 (9.86%, 0.362s/row, ETA 4h30m13.233s)
+INFO  16:27:59.957 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 5000 of 49716 (10.06%, 0.359s/row, ETA 4h27m43.221s)
+INFO  16:28:10.006 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 5100 of 49716 (10.26%, 0.348s/row, ETA 4h18m42.720s)
+INFO  16:28:14.532 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 29 in 00:00:59.822
+INFO  16:28:21.077 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 5200 of 49716 (10.46%, 0.340s/row, ETA 4h12m34.676s)
+INFO  16:28:37.240 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 5300 of 49716 (10.66%, 0.333s/row, ETA 4h 6m33.589s)
+INFO  16:28:55.462 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 5400 of 49716 (10.86%, 0.324s/row, ETA 3h59m14.455s)
+INFO  16:29:07.584 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 5500 of 49716 (11.06%, 0.317s/row, ETA 3h53m50.393s)
+INFO  16:29:14.172 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 30 in 00:00:59.638
+INFO  16:29:21.377 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 5600 of 49716 (11.26%, 0.306s/row, ETA 3h45m17.739s)
+INFO  16:29:28.601 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 5700 of 49716 (11.47%, 0.303s/row, ETA 3h42m3.807s)
+INFO  16:29:40.350 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 5800 of 49716 (11.67%, 0.298s/row, ETA 3h37m48.528s)
+INFO  16:29:56.432 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 5900 of 49716 (11.87%, 0.293s/row, ETA 3h34m6.670s)
+INFO  16:30:09.692 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 6000 of 49716 (12.07%, 0.289s/row, ETA 3h30m18.895s)
+INFO  16:30:15.249 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 31 in 00:01:01.076
+INFO  16:30:16.741 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 6100 of 49716 (12.27%, 0.279s/row, ETA 3h22m38.320s)
+INFO  16:30:27.100 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 6200 of 49716 (12.47%, 0.264s/row, ETA 3h11m14.500s)
+INFO  16:30:45.984 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 6300 of 49716 (12.67%, 0.250s/row, ETA 3h 0m38.165s)
+INFO  16:30:52.547 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 6400 of 49716 (12.87%, 0.241s/row, ETA 2h53m45.829s)
+INFO  16:31:07.077 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 6500 of 49716 (13.07%, 0.238s/row, ETA 2h51m12.011s)
+INFO  16:31:15.667 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 32 in 00:01:00.417
+INFO  16:31:15.836 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 6600 of 49716 (13.28%, 0.230s/row, ETA 2h45m32.672s)
+INFO  16:31:27.293 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 6700 of 49716 (13.48%, 0.224s/row, ETA 2h40m25.425s)
+INFO  16:31:41.488 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 6800 of 49716 (13.68%, 0.223s/row, ETA 2h39m12.656s)
+INFO  16:31:54.008 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 6900 of 49716 (13.88%, 0.215s/row, ETA 2h33m33.217s)
+INFO  16:32:05.349 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 7000 of 49716 (14.08%, 0.207s/row, ETA 2h27m40.063s)
+INFO  16:32:16.209 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 33 in 00:01:00.541
+INFO  16:32:21.155 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 7100 of 49716 (14.28%, 0.202s/row, ETA 2h23m16.054s)
+INFO  16:32:29.465 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 7200 of 49716 (14.48%, 0.199s/row, ETA 2h20m45.724s)
+INFO  16:32:42.600 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 7300 of 49716 (14.68%, 0.193s/row, ETA 2h16m11.817s)
+INFO  16:32:54.297 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 7400 of 49716 (14.88%, 0.187s/row, ETA 2h11m40.283s)
+INFO  16:33:06.573 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 7500 of 49716 (15.09%, 0.183s/row, ETA 2h 8m25.513s)
+INFO  16:33:13.209 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 7600 of 49716 (15.29%, 0.178s/row, ETA 2h 4m42.017s)
+INFO  16:33:19.789 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 7700 of 49716 (15.49%, 0.169s/row, ETA 1h58m32.490s)
+INFO  16:33:22.349 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 34 in 00:01:06.140
+INFO  16:33:28.413 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 7800 of 49716 (15.69%, 0.165s/row, ETA 1h55m10.104s)
+INFO  16:33:37.868 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 7900 of 49716 (15.89%, 0.160s/row, ETA 1h51m23.509s)
+INFO  16:33:49.424 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 8000 of 49716 (16.09%, 0.156s/row, ETA 1h48m6.948s)
+INFO  16:33:56.632 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 8100 of 49716 (16.29%, 0.151s/row, ETA 1h44m39.372s)
+INFO  16:34:04.351 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 8200 of 49716 (16.49%, 0.147s/row, ETA 1h41m33.039s)
+INFO  16:34:13.105 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 8300 of 49716 (16.69%, 0.145s/row, ETA 1h39m51.240s)
+INFO  16:34:23.395 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 35 in 00:01:01.045
+INFO  16:34:26.418 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 8400 of 49716 (16.90%, 0.143s/row, ETA 1h38m11.289s)
+INFO  16:34:31.141 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 8500 of 49716 (17.10%, 0.138s/row, ETA 1h35m8.399s)
+INFO  16:34:35.667 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 8600 of 49716 (17.30%, 0.135s/row, ETA 1h32m35.826s)
+INFO  16:34:39.860 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 8700 of 49716 (17.50%, 0.130s/row, ETA 1h29m11.660s)
+INFO  16:34:44.299 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 8800 of 49716 (17.70%, 0.127s/row, ETA 1h26m42.009s)
+INFO  16:34:48.302 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 8900 of 49716 (17.90%, 0.124s/row, ETA 1h24m12.724s)
+INFO  16:34:52.565 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 9000 of 49716 (18.10%, 0.117s/row, ETA 1h19m36.161s)
+INFO  16:34:56.376 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 9100 of 49716 (18.30%, 0.115s/row, ETA 1h18m0.950s)
+INFO  16:35:00.831 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 9200 of 49716 (18.51%, 0.112s/row, ETA 1h15m44.129s)
+INFO  16:35:04.196 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 9300 of 49716 (18.71%, 0.108s/row, ETA 1h12m50.772s)
+INFO  16:35:07.357 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 9400 of 49716 (18.91%, 0.106s/row, ETA 1h11m17.982s)
+INFO  16:35:10.338 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 9500 of 49716 (19.11%, 0.104s/row, ETA 1h 9m46.243s)
+INFO  16:35:13.521 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 9600 of 49716 (19.31%, 0.102s/row, ETA 1h 8m17.476s)
+INFO  16:35:17.375 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 9700 of 49716 (19.51%, 0.100s/row, ETA 1h 6m36.148s)
+INFO  16:35:23.873 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 9800 of 49716 (19.71%, 0.098s/row, ETA 1h 5m12.089s)
+INFO  16:35:28.278 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 36 in 00:01:04.882
+INFO  16:35:32.904 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 9900 of 49716 (19.91%, 0.095s/row, ETA 1h 3m13.639s)
+INFO  16:35:36.772 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 10000 of 49716 (20.11%, 0.091s/row, ETA 1h 0m28.581s)
+INFO  16:35:43.004 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 10100 of 49716 (20.32%, 0.091s/row, ETA 59m49.190s)
+INFO  16:35:46.980 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 10200 of 49716 (20.52%, 0.089s/row, ETA 58m44.050s)
+INFO  16:35:52.067 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 10300 of 49716 (20.72%, 0.087s/row, ETA 57m7.831s)
+INFO  16:35:55.820 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 10400 of 49716 (20.92%, 0.084s/row, ETA 55m5.361s)
+INFO  16:36:01.763 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 10500 of 49716 (21.12%, 0.083s/row, ETA 54m8.486s)
+INFO  16:36:09.110 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 10600 of 49716 (21.32%, 0.082s/row, ETA 53m9.775s)
+INFO  16:36:15.914 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 10700 of 49716 (21.52%, 0.081s/row, ETA 52m58.344s)
+INFO  16:36:22.061 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 10800 of 49716 (21.72%, 0.080s/row, ETA 52m6.595s)
+INFO  16:36:28.733 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 10900 of 49716 (21.92%, 0.078s/row, ETA 50m45.518s)
+INFO  16:36:30.692 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 37 in 00:01:02.412
+INFO  16:36:34.256 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 11000 of 49716 (22.13%, 0.077s/row, ETA 49m37.752s)
+INFO  16:36:42.512 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 11100 of 49716 (22.33%, 0.077s/row, ETA 49m39.386s)
+INFO  16:36:47.161 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 11200 of 49716 (22.53%, 0.076s/row, ETA 48m47.681s)
+INFO  16:36:51.268 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 11300 of 49716 (22.73%, 0.073s/row, ETA 46m46.555s)
+INFO  16:36:58.834 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 11400 of 49716 (22.93%, 0.073s/row, ETA 46m46.936s)
+INFO  16:37:04.702 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 11500 of 49716 (23.13%, 0.072s/row, ETA 45m33.398s)
+INFO  16:37:13.347 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 11600 of 49716 (23.33%, 0.072s/row, ETA 45m25.380s)
+INFO  16:37:20.153 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 11700 of 49716 (23.53%, 0.071s/row, ETA 44m42.858s)
+INFO  16:37:25.455 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 11800 of 49716 (23.73%, 0.069s/row, ETA 43m28.377s)
+INFO  16:37:29.711 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 11900 of 49716 (23.94%, 0.067s/row, ETA 42m18.983s)
+INFO  16:37:34.946 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 38 in 00:01:04.253
+INFO  16:37:40.586 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 12000 of 49716 (24.14%, 0.067s/row, ETA 42m8.755s)
+INFO  16:37:47.251 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 12100 of 49716 (24.34%, 0.065s/row, ETA 40m53.290s)
+INFO  16:37:51.880 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 12200 of 49716 (24.54%, 0.064s/row, ETA 40m19.143s)
+INFO  16:37:58.136 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 12300 of 49716 (24.74%, 0.063s/row, ETA 39m21.220s)
+INFO  16:38:04.235 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 12400 of 49716 (24.94%, 0.062s/row, ETA 38m33.132s)
+INFO  16:38:10.827 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 12500 of 49716 (25.14%, 0.061s/row, ETA 37m44.627s)
+INFO  16:38:14.994 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 12600 of 49716 (25.34%, 0.060s/row, ETA 37m20.211s)
+INFO  16:38:23.389 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 12700 of 49716 (25.55%, 0.061s/row, ETA 37m27.616s)
+INFO  16:38:28.676 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 12800 of 49716 (25.75%, 0.060s/row, ETA 36m56.902s)
+INFO  16:38:36.105 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 12900 of 49716 (25.95%, 0.060s/row, ETA 36m35.973s)
+INFO  16:38:39.658 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 39 in 00:01:04.711
+INFO  16:38:42.527 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 13000 of 49716 (26.15%, 0.059s/row, ETA 35m52.321s)
+INFO  16:38:47.522 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 13100 of 49716 (26.35%, 0.058s/row, ETA 35m30.244s)
+INFO  16:38:52.115 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 13200 of 49716 (26.55%, 0.058s/row, ETA 35m1.597s)
+INFO  16:38:58.475 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 13300 of 49716 (26.75%, 0.057s/row, ETA 34m38.401s)
+INFO  16:39:04.349 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 13400 of 49716 (26.95%, 0.056s/row, ETA 33m38.673s)
+INFO  16:39:10.171 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 13500 of 49716 (27.15%, 0.056s/row, ETA 33m41.066s)
+INFO  16:39:13.642 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 13600 of 49716 (27.36%, 0.056s/row, ETA 33m27.868s)
+INFO  16:39:17.976 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 13700 of 49716 (27.56%, 0.056s/row, ETA 33m23.328s)
+INFO  16:39:22.268 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 13800 of 49716 (27.76%, 0.056s/row, ETA 33m16.704s)
+INFO  16:39:28.302 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 13900 of 49716 (27.96%, 0.056s/row, ETA 33m25.692s)
+INFO  16:39:32.004 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 14000 of 49716 (28.16%, 0.056s/row, ETA 33m16.092s)
+INFO  16:39:37.488 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 14100 of 49716 (28.36%, 0.056s/row, ETA 33m22.414s)
+INFO  16:39:40.038 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 14200 of 49716 (28.56%, 0.056s/row, ETA 33m3.266s)
+INFO  16:39:43.019 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 14300 of 49716 (28.76%, 0.056s/row, ETA 32m54.965s)
+INFO  16:39:43.889 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 40 in 00:01:04.230
+INFO  16:39:46.399 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 14400 of 49716 (28.96%, 0.056s/row, ETA 32m50.928s)
+INFO  16:39:51.973 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 14500 of 49716 (29.17%, 0.056s/row, ETA 33m3.610s)
+INFO  16:39:56.952 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 14600 of 49716 (29.37%, 0.057s/row, ETA 33m10.593s)
+INFO  16:40:00.399 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 14700 of 49716 (29.57%, 0.057s/row, ETA 33m2.074s)
+INFO  16:40:03.879 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 14800 of 49716 (29.77%, 0.056s/row, ETA 32m35.336s)
+INFO  16:40:07.421 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 14900 of 49716 (29.97%, 0.055s/row, ETA 31m51.516s)
+INFO  16:40:10.044 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 15000 of 49716 (30.17%, 0.055s/row, ETA 31m37.380s)
+INFO  16:40:14.266 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 15100 of 49716 (30.37%, 0.054s/row, ETA 31m18.005s)
+INFO  16:40:16.984 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 15200 of 49716 (30.57%, 0.054s/row, ETA 31m3.898s)
+INFO  16:40:20.434 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 15300 of 49716 (30.77%, 0.054s/row, ETA 30m47.222s)
+INFO  16:40:23.074 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 15400 of 49716 (30.98%, 0.053s/row, ETA 30m34.218s)
+INFO  16:40:27.578 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 15500 of 49716 (31.18%, 0.053s/row, ETA 30m19.026s)
+INFO  16:40:29.600 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 15600 of 49716 (31.38%, 0.052s/row, ETA 29m37.378s)
+INFO  16:40:32.849 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 15700 of 49716 (31.58%, 0.051s/row, ETA 29m7.981s)
+INFO  16:40:35.728 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 15800 of 49716 (31.78%, 0.051s/row, ETA 28m40.674s)
+INFO  16:40:39.068 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 15900 of 49716 (31.98%, 0.050s/row, ETA 28m13.061s)
+INFO  16:40:41.040 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 16000 of 49716 (32.18%, 0.049s/row, ETA 27m44.112s)
+INFO  16:40:43.748 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 16100 of 49716 (32.38%, 0.048s/row, ETA 27m1.879s)
+INFO  16:40:46.113 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 16200 of 49716 (32.59%, 0.048s/row, ETA 26m41.745s)
+INFO  16:40:47.867 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 41 in 00:01:03.977
+INFO  16:40:49.008 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 16300 of 49716 (32.79%, 0.048s/row, ETA 26m28.866s)
+INFO  16:40:53.517 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 16400 of 49716 (32.99%, 0.047s/row, ETA 26m3.740s)
+INFO  16:40:55.936 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 16500 of 49716 (33.19%, 0.046s/row, ETA 25m36.134s)
+INFO  16:40:57.803 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 16600 of 49716 (33.39%, 0.045s/row, ETA 24m46.615s)
+INFO  16:41:00.577 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 16700 of 49716 (33.59%, 0.044s/row, ETA 24m15.505s)
+INFO  16:41:02.616 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 16800 of 49716 (33.79%, 0.043s/row, ETA 23m49.610s)
+INFO  16:41:04.396 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 16900 of 49716 (33.99%, 0.043s/row, ETA 23m29.021s)
+INFO  16:41:07.302 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 17000 of 49716 (34.19%, 0.041s/row, ETA 22m32.587s)
+INFO  16:41:11.100 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 17100 of 49716 (34.40%, 0.041s/row, ETA 22m9.745s)
+INFO  16:41:13.513 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 17200 of 49716 (34.60%, 0.040s/row, ETA 21m51.260s)
+INFO  16:41:15.329 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 17300 of 49716 (34.80%, 0.039s/row, ETA 21m18.439s)
+INFO  16:41:17.129 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 17400 of 49716 (35.00%, 0.039s/row, ETA 20m46.711s)
+INFO  16:41:19.258 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 17500 of 49716 (35.20%, 0.038s/row, ETA 20m14.094s)
+INFO  16:41:21.257 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 17600 of 49716 (35.40%, 0.037s/row, ETA 19m56.408s)
+INFO  16:41:23.635 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 17700 of 49716 (35.60%, 0.036s/row, ETA 19m14.153s)
+INFO  16:41:26.277 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 17800 of 49716 (35.80%, 0.036s/row, ETA 18m53.661s)
+INFO  16:41:28.981 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 17900 of 49716 (36.00%, 0.035s/row, ETA 18m20.051s)
+INFO  16:41:33.684 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 18000 of 49716 (36.21%, 0.034s/row, ETA 18m5.680s)
+INFO  16:41:35.967 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 18100 of 49716 (36.41%, 0.034s/row, ETA 17m45.111s)
+INFO  16:41:38.516 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 18200 of 49716 (36.61%, 0.033s/row, ETA 17m28.861s)
+INFO  16:41:39.790 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 18300 of 49716 (36.81%, 0.032s/row, ETA 16m53.579s)
+INFO  16:41:42.434 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 18400 of 49716 (37.01%, 0.032s/row, ETA 16m30.118s)
+INFO  16:41:44.049 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 18500 of 49716 (37.21%, 0.031s/row, ETA 16m0.696s)
+INFO  16:41:46.008 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 18600 of 49716 (37.41%, 0.030s/row, ETA 15m48.201s)
+INFO  16:41:47.789 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 18700 of 49716 (37.61%, 0.030s/row, ETA 15m29.324s)
+INFO  16:41:50.666 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 18800 of 49716 (37.81%, 0.030s/row, ETA 15m17.575s)
+INFO  16:41:52.410 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 18900 of 49716 (38.02%, 0.029s/row, ETA 14m48.168s)
+INFO  16:41:53.576 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 42 in 00:01:05.708
+INFO  16:41:54.113 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 19000 of 49716 (38.22%, 0.028s/row, ETA 14m33.000s)
+INFO  16:41:56.047 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 19100 of 49716 (38.42%, 0.028s/row, ETA 14m8.428s)
+INFO  16:41:59.315 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 19200 of 49716 (38.62%, 0.028s/row, ETA 14m10.033s)
+INFO  16:42:01.375 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 19300 of 49716 (38.82%, 0.028s/row, ETA 14m1.646s)
+INFO  16:42:03.081 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 19400 of 49716 (39.02%, 0.027s/row, ETA 13m48.735s)
+INFO  16:42:04.551 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 19500 of 49716 (39.22%, 0.027s/row, ETA 13m21.196s)
+INFO  16:42:05.878 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 19600 of 49716 (39.42%, 0.026s/row, ETA 12m56.547s)
+INFO  16:42:07.609 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 19700 of 49716 (39.63%, 0.025s/row, ETA 12m43.667s)
+INFO  16:42:09.466 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 19800 of 49716 (39.83%, 0.025s/row, ETA 12m31.414s)
+INFO  16:42:10.728 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 19900 of 49716 (40.03%, 0.025s/row, ETA 12m15.308s)
+INFO  16:42:13.071 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 20000 of 49716 (40.23%, 0.025s/row, ETA 12m11.176s)
+INFO  16:42:15.183 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 20100 of 49716 (40.43%, 0.024s/row, ETA 11m56.216s)
+INFO  16:42:16.431 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 20200 of 49716 (40.63%, 0.024s/row, ETA 11m45.117s)
+INFO  16:42:17.997 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 20300 of 49716 (40.83%, 0.024s/row, ETA 11m31.650s)
+INFO  16:42:20.054 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 20400 of 49716 (41.03%, 0.023s/row, ETA 11m25.876s)
+INFO  16:42:21.616 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 20500 of 49716 (41.23%, 0.023s/row, ETA 11m6.349s)
+INFO  16:42:23.073 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 20600 of 49716 (41.44%, 0.023s/row, ETA 11m0.775s)
+INFO  16:42:24.986 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 20700 of 49716 (41.64%, 0.022s/row, ETA 10m50.752s)
+INFO  16:42:26.667 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 20800 of 49716 (41.84%, 0.022s/row, ETA 10m41.582s)
+INFO  16:42:27.377 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 20900 of 49716 (42.04%, 0.022s/row, ETA 10m24.208s)
+INFO  16:42:28.827 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 21000 of 49716 (42.24%, 0.022s/row, ETA 10m19.042s)
+INFO  16:42:30.608 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 21100 of 49716 (42.44%, 0.021s/row, ETA 10m11.578s)
+INFO  16:42:31.468 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 21200 of 49716 (42.64%, 0.021s/row, ETA 10m0.859s)
+INFO  16:42:32.578 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 21300 of 49716 (42.84%, 0.021s/row, ETA  9m48.607s)
+INFO  16:42:33.634 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 21400 of 49716 (43.04%, 0.020s/row, ETA  9m26.979s)
+INFO  16:42:34.738 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 21500 of 49716 (43.25%, 0.020s/row, ETA  9m17.563s)
+INFO  16:42:35.897 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 21600 of 49716 (43.45%, 0.020s/row, ETA  9m11.603s)
+INFO  16:42:36.740 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 21700 of 49716 (43.65%, 0.019s/row, ETA  8m58.821s)
+INFO  16:42:37.965 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 21800 of 49716 (43.85%, 0.019s/row, ETA  8m52.356s)
+INFO  16:42:39.191 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 21900 of 49716 (44.05%, 0.019s/row, ETA  8m47.366s)
+INFO  16:42:40.637 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 22000 of 49716 (44.25%, 0.019s/row, ETA  8m37.373s)
+INFO  16:42:42.141 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 22100 of 49716 (44.45%, 0.018s/row, ETA  8m22.837s)
+INFO  16:42:43.997 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 22200 of 49716 (44.65%, 0.018s/row, ETA  8m17.952s)
+INFO  16:42:45.219 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 22300 of 49716 (44.85%, 0.018s/row, ETA  8m12.887s)
+INFO  16:42:46.234 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 22400 of 49716 (45.06%, 0.018s/row, ETA  8m6.802s)
+INFO  16:42:47.546 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 22500 of 49716 (45.26%, 0.018s/row, ETA  8m0.569s)
+INFO  16:42:48.835 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 22600 of 49716 (45.46%, 0.018s/row, ETA  7m54.951s)
+INFO  16:42:49.867 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 22700 of 49716 (45.66%, 0.017s/row, ETA  7m45.928s)
+INFO  16:42:50.788 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 22800 of 49716 (45.86%, 0.017s/row, ETA  7m34.937s)
+INFO  16:42:51.782 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 22900 of 49716 (46.06%, 0.017s/row, ETA  7m24.077s)
+INFO  16:42:52.989 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 23000 of 49716 (46.26%, 0.016s/row, ETA  7m3.744s)
+INFO  16:42:53.337 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 43 in 00:00:59.760
+INFO  16:42:54.309 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 23100 of 49716 (46.46%, 0.016s/row, ETA  6m57.032s)
+INFO  16:42:56.426 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 23200 of 49716 (46.67%, 0.016s/row, ETA  6m53.172s)
+INFO  16:42:57.160 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 23300 of 49716 (46.87%, 0.015s/row, ETA  6m48.759s)
+INFO  16:42:57.956 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 23400 of 49716 (47.07%, 0.015s/row, ETA  6m37.486s)
+INFO  16:42:58.621 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 23500 of 49716 (47.27%, 0.015s/row, ETA  6m30.995s)
+INFO  16:42:59.405 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 23600 of 49716 (47.47%, 0.015s/row, ETA  6m23.371s)
+INFO  16:43:00.093 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 23700 of 49716 (47.67%, 0.014s/row, ETA  6m16.208s)
+INFO  16:43:01.035 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 23800 of 49716 (47.87%, 0.014s/row, ETA  6m4.738s)
+INFO  16:43:02.076 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 23900 of 49716 (48.07%, 0.014s/row, ETA  5m59.701s)
+INFO  16:43:03.570 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 24000 of 49716 (48.27%, 0.014s/row, ETA  5m57.232s)
+INFO  16:43:04.468 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 24100 of 49716 (48.48%, 0.014s/row, ETA  5m50.533s)
+INFO  16:43:05.176 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 24200 of 49716 (48.68%, 0.013s/row, ETA  5m36.102s)
+INFO  16:43:06.086 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 24300 of 49716 (48.88%, 0.013s/row, ETA  5m28.940s)
+INFO  16:43:07.269 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 24400 of 49716 (49.08%, 0.013s/row, ETA  5m24.996s)
+INFO  16:43:08.101 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 24500 of 49716 (49.28%, 0.013s/row, ETA  5m20.499s)
+INFO  16:43:09.594 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 24600 of 49716 (49.48%, 0.013s/row, ETA  5m20.056s)
+INFO  16:43:10.540 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 24700 of 49716 (49.68%, 0.013s/row, ETA  5m14.855s)
+INFO  16:43:12.430 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 24800 of 49716 (49.88%, 0.013s/row, ETA  5m13.759s)
+INFO  16:43:13.097 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 24900 of 49716 (50.08%, 0.012s/row, ETA  5m9.548s)
+INFO  16:43:13.794 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 25000 of 49716 (50.29%, 0.012s/row, ETA  5m0.162s)
+INFO  16:43:14.450 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 25100 of 49716 (50.49%, 0.012s/row, ETA  4m51.785s)
+INFO  16:43:15.162 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 25200 of 49716 (50.69%, 0.012s/row, ETA  4m47.973s)
+INFO  16:43:16.037 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 25300 of 49716 (50.89%, 0.012s/row, ETA  4m43.418s)
+INFO  16:43:16.934 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 25400 of 49716 (51.09%, 0.011s/row, ETA  4m36.621s)
+INFO  16:43:17.789 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 25500 of 49716 (51.29%, 0.011s/row, ETA  4m32.059s)
+INFO  16:43:18.885 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 25600 of 49716 (51.49%, 0.011s/row, ETA  4m29.191s)
+INFO  16:43:19.326 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 25700 of 49716 (51.69%, 0.011s/row, ETA  4m21.009s)
+INFO  16:43:19.721 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 25800 of 49716 (51.89%, 0.011s/row, ETA  4m13.768s)
+INFO  16:43:20.573 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 25900 of 49716 (52.10%, 0.011s/row, ETA  4m13.381s)
+INFO  16:43:21.340 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 26000 of 49716 (52.30%, 0.011s/row, ETA  4m9.083s)
+INFO  16:43:21.965 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 26100 of 49716 (52.50%, 0.010s/row, ETA  4m2.571s)
+INFO  16:43:22.580 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 26200 of 49716 (52.70%, 0.010s/row, ETA  4m0.392s)
+INFO  16:43:23.136 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 26300 of 49716 (52.90%, 0.010s/row, ETA  3m56.771s)
+INFO  16:43:23.498 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 26400 of 49716 (53.10%, 0.010s/row, ETA  3m52.527s)
+INFO  16:43:24.143 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 26500 of 49716 (53.30%, 0.010s/row, ETA  3m49.393s)
+INFO  16:43:24.811 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 26600 of 49716 (53.50%, 0.010s/row, ETA  3m46.137s)
+INFO  16:43:25.142 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 26700 of 49716 (53.71%, 0.010s/row, ETA  3m42.808s)
+INFO  16:43:25.504 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 26800 of 49716 (53.91%, 0.010s/row, ETA  3m37.878s)
+INFO  16:43:26.096 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 26900 of 49716 (54.11%, 0.009s/row, ETA  3m34.036s)
+INFO  16:43:26.444 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 27000 of 49716 (54.31%, 0.009s/row, ETA  3m28.110s)
+INFO  16:43:26.884 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 27100 of 49716 (54.51%, 0.009s/row, ETA  3m22.383s)
+INFO  16:43:27.152 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 27200 of 49716 (54.71%, 0.009s/row, ETA  3m14.334s)
+INFO  16:43:27.402 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 27300 of 49716 (54.91%, 0.008s/row, ETA  3m9.114s)
+INFO  16:43:27.647 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 27400 of 49716 (55.11%, 0.008s/row, ETA  3m4.834s)
+INFO  16:43:27.835 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 27500 of 49716 (55.31%, 0.008s/row, ETA  2m59.014s)
+INFO  16:43:29.904 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 27600 of 49716 (55.52%, 0.008s/row, ETA  3m1.660s)
+INFO  16:43:30.139 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 27700 of 49716 (55.72%, 0.008s/row, ETA  2m57.323s)
+INFO  16:43:30.349 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 27800 of 49716 (55.92%, 0.008s/row, ETA  2m53.404s)
+INFO  16:43:30.561 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 27900 of 49716 (56.12%, 0.008s/row, ETA  2m49.202s)
+INFO  16:43:31.441 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 28000 of 49716 (56.32%, 0.008s/row, ETA  2m47.006s)
+INFO  16:43:31.703 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 28100 of 49716 (56.52%, 0.007s/row, ETA  2m41.659s)
+INFO  16:43:31.937 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 28200 of 49716 (56.72%, 0.007s/row, ETA  2m32.811s)
+INFO  16:43:32.154 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 28300 of 49716 (56.92%, 0.007s/row, ETA  2m29.887s)
+INFO  16:43:32.328 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 28400 of 49716 (57.12%, 0.007s/row, ETA  2m26.536s)
+INFO  16:43:32.613 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 28500 of 49716 (57.33%, 0.007s/row, ETA  2m24.235s)
+INFO  16:43:32.920 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 28600 of 49716 (57.53%, 0.007s/row, ETA  2m21.539s)
+INFO  16:43:33.186 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 28700 of 49716 (57.73%, 0.007s/row, ETA  2m19.096s)
+INFO  16:43:33.501 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 28800 of 49716 (57.93%, 0.006s/row, ETA  2m15.810s)
+INFO  16:43:34.181 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 28900 of 49716 (58.13%, 0.006s/row, ETA  2m13.658s)
+INFO  16:43:34.588 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 29000 of 49716 (58.33%, 0.006s/row, ETA  2m8.514s)
+INFO  16:43:34.826 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 29100 of 49716 (58.53%, 0.006s/row, ETA  2m5.174s)
+INFO  16:43:35.194 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 29200 of 49716 (58.73%, 0.006s/row, ETA  2m3.173s)
+INFO  16:43:35.488 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 29300 of 49716 (58.93%, 0.006s/row, ETA  2m0.054s)
+INFO  16:43:35.798 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 29400 of 49716 (59.14%, 0.006s/row, ETA  1m55.918s)
+INFO  16:43:36.095 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 29500 of 49716 (59.34%, 0.006s/row, ETA  1m53.186s)
+INFO  16:43:36.360 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 29600 of 49716 (59.54%, 0.005s/row, ETA  1m47.687s)
+INFO  16:43:36.701 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 29700 of 49716 (59.74%, 0.005s/row, ETA  1m44.730s)
+INFO  16:43:36.995 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 29800 of 49716 (59.94%, 0.005s/row, ETA  1m37.848s)
+INFO  16:43:37.526 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 29900 of 49716 (60.14%, 0.005s/row, ETA  1m36.818s)
+INFO  16:43:37.914 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 30000 of 49716 (60.34%, 0.005s/row, ETA  1m35.111s)
+INFO  16:43:38.187 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 30100 of 49716 (60.54%, 0.005s/row, ETA  1m33.124s)
+INFO  16:43:38.455 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 30200 of 49716 (60.75%, 0.005s/row, ETA  1m30.917s)
+INFO  16:43:38.711 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 30300 of 49716 (60.95%, 0.005s/row, ETA  1m28.050s)
+INFO  16:43:39.020 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 30400 of 49716 (61.15%, 0.004s/row, ETA  1m25.320s)
+INFO  16:43:39.252 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 30500 of 49716 (61.35%, 0.004s/row, ETA  1m22.486s)
+INFO  16:43:39.558 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 30600 of 49716 (61.55%, 0.004s/row, ETA  1m19.037s)
+INFO  16:43:39.846 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 30700 of 49716 (61.75%, 0.004s/row, ETA  1m18.042s)
+INFO  16:43:40.078 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 30800 of 49716 (61.95%, 0.004s/row, ETA  1m17.015s)
+INFO  16:43:40.343 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 30900 of 49716 (62.15%, 0.004s/row, ETA  1m14.399s)
+INFO  16:43:40.708 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 31000 of 49716 (62.35%, 0.004s/row, ETA  1m12.496s)
+INFO  16:43:41.302 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 31100 of 49716 (62.56%, 0.004s/row, ETA  1m11.995s)
+INFO  16:43:41.659 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 31200 of 49716 (62.76%, 0.004s/row, ETA  1m10.654s)
+INFO  16:43:41.880 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 31300 of 49716 (62.96%, 0.004s/row, ETA  1m9.040s)
+INFO  16:43:42.422 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 31400 of 49716 (63.16%, 0.004s/row, ETA  1m9.321s)
+INFO  16:43:42.811 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 31500 of 49716 (63.36%, 0.004s/row, ETA  1m8.014s)
+INFO  16:43:43.139 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 31600 of 49716 (63.56%, 0.004s/row, ETA  1m6.406s)
+INFO  16:43:43.426 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 31700 of 49716 (63.76%, 0.004s/row, ETA  1m5.878s)
+INFO  16:43:43.703 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 31800 of 49716 (63.96%, 0.004s/row, ETA  1m5.212s)
+INFO  16:43:44.015 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 31900 of 49716 (64.16%, 0.004s/row, ETA  1m3.850s)
+INFO  16:43:44.243 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 32000 of 49716 (64.37%, 0.004s/row, ETA  1m3.067s)
+INFO  16:43:44.482 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 32100 of 49716 (64.57%, 0.004s/row, ETA  1m2.001s)
+INFO  16:43:44.704 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 32200 of 49716 (64.77%, 0.004s/row, ETA  1m1.490s)
+INFO  16:43:44.827 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 32300 of 49716 (64.97%, 0.003s/row, ETA  1m0.695s)
+INFO  16:43:45.050 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 32400 of 49716 (65.17%, 0.003s/row, ETA  1m0.269s)
+INFO  16:43:45.265 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 32500 of 49716 (65.37%, 0.003s/row, ETA  1m0.016s)
+INFO  16:43:45.534 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 32600 of 49716 (65.57%, 0.003s/row, ETA 53.503s)
+INFO  16:43:45.652 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 32700 of 49716 (65.77%, 0.003s/row, ETA 52.794s)
+INFO  16:43:45.828 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 32800 of 49716 (65.97%, 0.003s/row, ETA 52.372s)
+INFO  16:43:46.010 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 32900 of 49716 (66.18%, 0.003s/row, ETA 51.957s)
+INFO  16:43:46.290 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 33000 of 49716 (66.38%, 0.003s/row, ETA 49.642s)
+INFO  16:43:46.581 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 33100 of 49716 (66.58%, 0.003s/row, ETA 49.445s)
+INFO  16:43:46.758 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 33200 of 49716 (66.78%, 0.003s/row, ETA 48.955s)
+INFO  16:43:47.079 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 33300 of 49716 (66.98%, 0.003s/row, ETA 49.003s)
+INFO  16:43:47.268 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 33400 of 49716 (67.18%, 0.003s/row, ETA 48.754s)
+INFO  16:43:47.508 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 33500 of 49716 (67.38%, 0.003s/row, ETA 48.306s)
+INFO  16:43:47.735 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 33600 of 49716 (67.58%, 0.003s/row, ETA 47.750s)
+INFO  16:43:47.899 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 33700 of 49716 (67.79%, 0.003s/row, ETA 47.131s)
+INFO  16:43:48.128 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 33800 of 49716 (67.99%, 0.003s/row, ETA 46.563s)
+INFO  16:43:48.375 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 33900 of 49716 (68.19%, 0.003s/row, ETA 44.900s)
+INFO  16:43:48.634 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 34000 of 49716 (68.39%, 0.003s/row, ETA 44.149s)
+INFO  16:43:48.860 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 34100 of 49716 (68.59%, 0.003s/row, ETA 43.829s)
+INFO  16:43:49.272 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 34200 of 49716 (68.79%, 0.003s/row, ETA 43.687s)
+INFO  16:43:49.439 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 34300 of 49716 (68.99%, 0.003s/row, ETA 43.013s)
+INFO  16:43:49.663 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 34400 of 49716 (69.19%, 0.003s/row, ETA 42.472s)
+INFO  16:43:49.904 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 34500 of 49716 (69.39%, 0.003s/row, ETA 42.022s)
+INFO  16:43:50.170 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 34600 of 49716 (69.60%, 0.003s/row, ETA 41.749s)
+INFO  16:43:50.351 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 34700 of 49716 (69.80%, 0.003s/row, ETA 40.992s)
+INFO  16:43:50.527 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 34800 of 49716 (70.00%, 0.003s/row, ETA 40.368s)
+INFO  16:43:50.686 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 34900 of 49716 (70.20%, 0.003s/row, ETA 38.995s)
+INFO  16:43:50.882 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 35000 of 49716 (70.40%, 0.003s/row, ETA 38.169s)
+INFO  16:43:51.040 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 35100 of 49716 (70.60%, 0.003s/row, ETA 37.571s)
+INFO  16:43:51.208 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 35200 of 49716 (70.80%, 0.003s/row, ETA 37.024s)
+INFO  16:43:51.357 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 35300 of 49716 (71.00%, 0.003s/row, ETA 36.459s)
+INFO  16:43:51.501 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 35400 of 49716 (71.20%, 0.002s/row, ETA 35.737s)
+INFO  16:43:51.619 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 35500 of 49716 (71.41%, 0.002s/row, ETA 35.162s)
+INFO  16:43:51.739 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 35600 of 49716 (71.61%, 0.002s/row, ETA 34.390s)
+INFO  16:43:51.909 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 35700 of 49716 (71.81%, 0.002s/row, ETA 33.816s)
+INFO  16:43:52.055 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 35800 of 49716 (72.01%, 0.002s/row, ETA 33.335s)
+INFO  16:43:52.201 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 35900 of 49716 (72.21%, 0.002s/row, ETA 32.766s)
+INFO  16:43:52.354 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 36000 of 49716 (72.41%, 0.002s/row, ETA 31.950s)
+INFO  16:43:52.502 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 36100 of 49716 (72.61%, 0.002s/row, ETA 30.499s)
+INFO  16:43:52.663 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 36200 of 49716 (72.81%, 0.002s/row, ETA 29.745s)
+INFO  16:43:52.890 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 36300 of 49716 (73.01%, 0.002s/row, ETA 29.543s)
+INFO  16:43:53.050 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 36400 of 49716 (73.22%, 0.002s/row, ETA 28.305s)
+INFO  16:43:53.200 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 36500 of 49716 (73.42%, 0.002s/row, ETA 27.460s)
+INFO  16:43:53.370 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 36600 of 49716 (73.62%, 0.002s/row, ETA 26.839s)
+INFO  16:43:53.478 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 36700 of 49716 (73.82%, 0.002s/row, ETA 26.169s)
+INFO  16:43:53.588 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 36800 of 49716 (74.02%, 0.002s/row, ETA 25.535s)
+INFO  16:43:53.707 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 36900 of 49716 (74.22%, 0.002s/row, ETA 24.842s)
+INFO  16:43:53.861 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 37000 of 49716 (74.42%, 0.002s/row, ETA 24.459s)
+INFO  16:43:53.993 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 37100 of 49716 (74.62%, 0.002s/row, ETA 23.998s)
+INFO  16:43:54.136 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 37200 of 49716 (74.83%, 0.002s/row, ETA 23.610s)
+INFO  16:43:54.292 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 37300 of 49716 (75.03%, 0.002s/row, ETA 23.504s)
+INFO  16:43:54.465 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 37400 of 49716 (75.23%, 0.002s/row, ETA 23.191s)
+INFO  16:43:54.646 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 44 in 00:01:01.308
+INFO  16:43:54.773 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 37500 of 49716 (75.43%, 0.002s/row, ETA 23.229s)
+INFO  16:43:54.896 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 37600 of 49716 (75.63%, 0.002s/row, ETA 22.687s)
+INFO  16:43:55.018 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 37700 of 49716 (75.83%, 0.002s/row, ETA 22.510s)
+INFO  16:43:55.137 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 37800 of 49716 (76.03%, 0.002s/row, ETA 22.183s)
+INFO  16:43:55.293 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 37900 of 49716 (76.23%, 0.002s/row, ETA 21.937s)
+INFO  16:43:55.435 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 38000 of 49716 (76.43%, 0.002s/row, ETA 21.429s)
+INFO  16:43:55.545 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 38100 of 49716 (76.64%, 0.002s/row, ETA 20.825s)
+INFO  16:43:55.656 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 38200 of 49716 (76.84%, 0.002s/row, ETA 20.495s)
+INFO  16:43:55.749 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 38300 of 49716 (77.04%, 0.002s/row, ETA 19.794s)
+INFO  16:43:55.844 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 38400 of 49716 (77.24%, 0.002s/row, ETA 19.409s)
+INFO  16:43:55.923 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 38500 of 49716 (77.44%, 0.002s/row, ETA 18.877s)
+INFO  16:43:56.053 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 38600 of 49716 (77.64%, 0.002s/row, ETA 18.494s)
+INFO  16:43:56.191 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 38700 of 49716 (77.84%, 0.002s/row, ETA 18.268s)
+INFO  16:43:56.325 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 38800 of 49716 (78.04%, 0.002s/row, ETA 17.894s)
+INFO  16:43:56.455 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 38900 of 49716 (78.24%, 0.002s/row, ETA 17.480s)
+INFO  16:43:56.596 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 39000 of 49716 (78.45%, 0.002s/row, ETA 17.064s)
+INFO  16:43:56.732 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 39100 of 49716 (78.65%, 0.002s/row, ETA 16.715s)
+INFO  16:43:56.874 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 39200 of 49716 (78.85%, 0.002s/row, ETA 15.987s)
+INFO  16:43:57.004 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 39300 of 49716 (79.05%, 0.002s/row, ETA 15.760s)
+INFO  16:43:57.179 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 39400 of 49716 (79.25%, 0.002s/row, ETA 15.507s)
+INFO  16:43:57.292 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 39500 of 49716 (79.45%, 0.001s/row, ETA 15.095s)
+INFO  16:43:57.375 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 39600 of 49716 (79.65%, 0.001s/row, ETA 14.579s)
+INFO  16:43:57.471 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 39700 of 49716 (79.85%, 0.001s/row, ETA 14.263s)
+INFO  16:43:57.615 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 39800 of 49716 (80.05%, 0.001s/row, ETA 14.058s)
+INFO  16:43:57.737 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 39900 of 49716 (80.26%, 0.001s/row, ETA 13.843s)
+INFO  16:43:57.866 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 40000 of 49716 (80.46%, 0.001s/row, ETA 13.571s)
+INFO  16:43:58.027 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 40100 of 49716 (80.66%, 0.001s/row, ETA 13.438s)
+INFO  16:43:58.164 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 40200 of 49716 (80.86%, 0.001s/row, ETA 13.239s)
+INFO  16:43:58.286 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 40300 of 49716 (81.06%, 0.001s/row, ETA 13.050s)
+INFO  16:43:58.409 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 40400 of 49716 (81.26%, 0.001s/row, ETA 12.872s)
+INFO  16:43:58.521 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 40500 of 49716 (81.46%, 0.001s/row, ETA 12.722s)
+INFO  16:43:58.660 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 40600 of 49716 (81.66%, 0.001s/row, ETA 12.619s)
+INFO  16:43:58.802 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 40700 of 49716 (81.86%, 0.001s/row, ETA 12.429s)
+INFO  16:43:58.907 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 40800 of 49716 (82.07%, 0.001s/row, ETA 12.218s)
+INFO  16:43:59.023 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 40900 of 49716 (82.27%, 0.001s/row, ETA 12.030s)
+INFO  16:43:59.130 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 41000 of 49716 (82.47%, 0.001s/row, ETA 11.811s)
+INFO  16:43:59.239 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 41100 of 49716 (82.67%, 0.001s/row, ETA 11.610s)
+INFO  16:43:59.375 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 41200 of 49716 (82.87%, 0.001s/row, ETA 11.432s)
+INFO  16:43:59.539 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 41300 of 49716 (83.07%, 0.001s/row, ETA 11.191s)
+INFO  16:43:59.625 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 41400 of 49716 (83.27%, 0.001s/row, ETA 10.936s)
+INFO  16:43:59.728 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 41500 of 49716 (83.47%, 0.001s/row, ETA 10.726s)
+INFO  16:43:59.816 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 41600 of 49716 (83.68%, 0.001s/row, ETA 10.463s)
+INFO  16:43:59.924 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 41700 of 49716 (83.88%, 0.001s/row, ETA 10.334s)
+INFO  16:44:00.033 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 41800 of 49716 (84.08%, 0.001s/row, ETA 10.204s)
+INFO  16:44:00.198 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 41900 of 49716 (84.28%, 0.001s/row, ETA 10.147s)
+INFO  16:44:00.283 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 42000 of 49716 (84.48%, 0.001s/row, ETA 9.911s)
+INFO  16:44:00.355 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 42100 of 49716 (84.68%, 0.001s/row, ETA 9.691s)
+INFO  16:44:00.482 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 42200 of 49716 (84.88%, 0.001s/row, ETA 9.539s)
+INFO  16:44:00.572 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 42300 of 49716 (85.08%, 0.001s/row, ETA 9.315s)
+INFO  16:44:00.680 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 42400 of 49716 (85.28%, 0.001s/row, ETA 9.094s)
+INFO  16:44:00.755 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 42500 of 49716 (85.49%, 0.001s/row, ETA 8.634s)
+INFO  16:44:00.837 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 42600 of 49716 (85.69%, 0.001s/row, ETA 8.455s)
+INFO  16:44:00.900 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 42700 of 49716 (85.89%, 0.001s/row, ETA 8.254s)
+INFO  16:44:01.078 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 42800 of 49716 (86.09%, 0.001s/row, ETA 8.219s)
+INFO  16:44:01.154 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 42900 of 49716 (86.29%, 0.001s/row, ETA 7.990s)
+INFO  16:44:01.241 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 43000 of 49716 (86.49%, 0.001s/row, ETA 7.799s)
+INFO  16:44:01.314 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 43100 of 49716 (86.69%, 0.001s/row, ETA 7.633s)
+INFO  16:44:01.393 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 43200 of 49716 (86.89%, 0.001s/row, ETA 7.476s)
+INFO  16:44:01.471 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 43300 of 49716 (87.09%, 0.001s/row, ETA 7.342s)
+INFO  16:44:01.527 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 43400 of 49716 (87.30%, 0.001s/row, ETA 7.178s)
+INFO  16:44:01.673 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 43500 of 49716 (87.50%, 0.001s/row, ETA 7.148s)
+INFO  16:44:01.749 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 43600 of 49716 (87.70%, 0.001s/row, ETA 6.967s)
+INFO  16:44:01.816 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 43700 of 49716 (87.90%, 0.001s/row, ETA 6.768s)
+INFO  16:44:01.875 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 43800 of 49716 (88.10%, 0.001s/row, ETA 6.567s)
+INFO  16:44:01.936 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 43900 of 49716 (88.30%, 0.001s/row, ETA 6.376s)
+INFO  16:44:01.990 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 44000 of 49716 (88.50%, 0.001s/row, ETA 6.167s)
+INFO  16:44:02.071 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 44100 of 49716 (88.70%, 0.001s/row, ETA 5.996s)
+INFO  16:44:02.145 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 44200 of 49716 (88.90%, 0.001s/row, ETA 5.816s)
+INFO  16:44:02.204 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 44300 of 49716 (89.11%, 0.001s/row, ETA 5.633s)
+INFO  16:44:02.270 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 44400 of 49716 (89.31%, 0.001s/row, ETA 5.414s)
+INFO  16:44:02.343 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 44500 of 49716 (89.51%, 0.001s/row, ETA 5.269s)
+INFO  16:44:02.403 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 44600 of 49716 (89.71%, 0.001s/row, ETA 5.144s)
+INFO  16:44:02.457 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 44700 of 49716 (89.91%, 0.001s/row, ETA 5.002s)
+INFO  16:44:02.508 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 44800 of 49716 (90.11%, 0.001s/row, ETA 4.811s)
+INFO  16:44:02.578 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 44900 of 49716 (90.31%, 0.001s/row, ETA 4.662s)
+INFO  16:44:02.628 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 45000 of 49716 (90.51%, 0.001s/row, ETA 4.492s)
+INFO  16:44:02.675 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 45100 of 49716 (90.72%, 0.001s/row, ETA 4.291s)
+INFO  16:44:02.717 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 45200 of 49716 (90.92%, 0.001s/row, ETA 4.112s)
+INFO  16:44:02.773 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 45300 of 49716 (91.12%, 0.001s/row, ETA 3.963s)
+INFO  16:44:02.824 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 45400 of 49716 (91.32%, 0.001s/row, ETA 3.810s)
+INFO  16:44:02.871 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 45500 of 49716 (91.52%, 0.001s/row, ETA 3.668s)
+INFO  16:44:02.925 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 45600 of 49716 (91.72%, 0.001s/row, ETA 3.511s)
+INFO  16:44:02.971 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 45700 of 49716 (91.92%, 0.001s/row, ETA 3.348s)
+INFO  16:44:03.036 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 45800 of 49716 (92.12%, 0.001s/row, ETA 3.234s)
+INFO  16:44:03.105 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 45900 of 49716 (92.32%, 0.001s/row, ETA 3.115s)
+INFO  16:44:03.188 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 46000 of 49716 (92.53%, 0.001s/row, ETA 3.016s)
+INFO  16:44:03.251 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 46100 of 49716 (92.73%, 0.001s/row, ETA 2.901s)
+INFO  16:44:03.313 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 46200 of 49716 (92.93%, 0.001s/row, ETA 2.769s)
+INFO  16:44:03.378 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 46300 of 49716 (93.13%, 0.001s/row, ETA 2.623s)
+INFO  16:44:03.449 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 46400 of 49716 (93.33%, 0.001s/row, ETA 2.536s)
+INFO  16:44:03.511 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 46500 of 49716 (93.53%, 0.001s/row, ETA 2.433s)
+INFO  16:44:03.576 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 46600 of 49716 (93.73%, 0.001s/row, ETA 2.343s)
+INFO  16:44:03.633 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 46700 of 49716 (93.93%, 0.001s/row, ETA 2.237s)
+INFO  16:44:03.691 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 46800 of 49716 (94.13%, 0.001s/row, ETA 2.134s)
+INFO  16:44:03.754 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 46900 of 49716 (94.34%, 0.001s/row, ETA 2.003s)
+INFO  16:44:03.813 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 47000 of 49716 (94.54%, 0.001s/row, ETA 1.918s)
+INFO  16:44:03.875 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 47100 of 49716 (94.74%, 0.001s/row, ETA 1.841s)
+INFO  16:44:03.932 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 47200 of 49716 (94.94%, 0.001s/row, ETA 1.736s)
+INFO  16:44:04.024 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 47300 of 49716 (95.14%, 0.001s/row, ETA 1.668s)
+INFO  16:44:04.116 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 47400 of 49716 (95.34%, 0.001s/row, ETA 1.592s)
+INFO  16:44:04.206 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 47500 of 49716 (95.54%, 0.001s/row, ETA 1.529s)
+INFO  16:44:04.299 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 47600 of 49716 (95.74%, 0.001s/row, ETA 1.465s)
+INFO  16:44:04.386 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 47700 of 49716 (95.94%, 0.001s/row, ETA 1.405s)
+INFO  16:44:04.469 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 47800 of 49716 (96.15%, 0.001s/row, ETA 1.299s)
+INFO  16:44:04.554 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 47900 of 49716 (96.35%, 0.001s/row, ETA 1.235s)
+INFO  16:44:04.639 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 48000 of 49716 (96.55%, 0.001s/row, ETA 1.166s)
+INFO  16:44:04.723 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 48100 of 49716 (96.75%, 0.001s/row, ETA 1.102s)
+INFO  16:44:04.807 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 48200 of 49716 (96.95%, 0.001s/row, ETA 1.035s)
+INFO  16:44:05.651 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 48300 of 49716 (97.15%, 0.001s/row, ETA 1.184s)
+INFO  16:44:05.683 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 48400 of 49716 (97.35%, 0.001s/row, ETA 1.094s)
+INFO  16:44:05.715 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 48500 of 49716 (97.55%, 0.001s/row, ETA 0.983s)
+INFO  16:44:05.748 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 48600 of 49716 (97.76%, 0.001s/row, ETA 0.893s)
+INFO  16:44:05.780 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 48700 of 49716 (97.96%, 0.001s/row, ETA 0.806s)
+INFO  16:44:05.815 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 48800 of 49716 (98.16%, 0.001s/row, ETA 0.722s)
+INFO  16:44:05.854 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 48900 of 49716 (98.36%, 0.001s/row, ETA 0.639s)
+INFO  16:44:05.887 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 49000 of 49716 (98.56%, 0.001s/row, ETA 0.558s)
+INFO  16:44:05.918 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 49100 of 49716 (98.76%, 0.001s/row, ETA 0.474s)
+INFO  16:44:05.948 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 49200 of 49716 (98.96%, 0.001s/row, ETA 0.392s)
+INFO  16:44:05.978 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 49300 of 49716 (99.16%, 0.001s/row, ETA 0.314s)
+INFO  16:44:06.009 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 49400 of 49716 (99.36%, 0.001s/row, ETA 0.236s)
+INFO  16:44:06.039 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 49500 of 49716 (99.57%, 0.001s/row, ETA 0.160s)
+INFO  16:44:06.071 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 49600 of 49716 (99.77%, 0.001s/row, ETA 0.085s)
+INFO  16:44:06.100 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider item-item model build: finished 49700 of 49716 (99.97%, 0.001s/row, ETA 0.012s)
+INFO  16:44:06.105 [ForkJoinPool-1-worker-2] o.l.k.i.m.ItemItemModelProvider built model of 764607362 similarities for 49716 items in 46m2.286s
+INFO  16:45:00.077 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 45 in 00:01:05.430
+INFO  16:46:03.577 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 46 in 00:01:03.499
+INFO  16:47:06.275 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 47 in 00:01:02.698
+INFO  16:48:11.351 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 48 in 00:01:05.073
+INFO  16:49:15.380 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 49 in 00:01:04.027
+INFO  16:50:20.746 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 50 in 00:01:05.366
+INFO  16:51:24.347 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 51 in 00:01:03.600
+INFO  16:52:29.146 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 52 in 00:01:04.797
+INFO  16:53:32.219 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 53 in 00:01:03.073
+INFO  16:54:37.047 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 54 in 00:01:04.827
+INFO  16:55:43.383 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 55 in 00:01:06.334
+INFO  16:56:49.804 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 56 in 00:01:06.420
+INFO  16:57:55.865 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 57 in 00:01:06.060
+INFO  16:59:03.536 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 58 in 00:01:07.670
+INFO  17:00:09.553 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 59 in 00:01:06.016
+INFO  17:01:14.084 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 60 in 00:01:04.530
+INFO  17:02:17.220 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 61 in 00:01:03.135
+INFO  17:03:19.508 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 62 in 00:01:02.287
+INFO  17:04:22.476 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 63 in 00:01:02.967
+INFO  17:05:13.095 [ForkJoinPool-1-worker-2] o.l.e.t.ComponentCache wrote object matrix of 764607362 similarities for 49716 items to cache as 1be50d592a15a77ee7c609e6a967868197a8314f (7571933591 bytes)
+INFO  17:05:13.286 [ForkJoinPool-1-worker-2] o.l.e.t.ExperimentJob Built ItemItem in 1.139 h
+INFO  17:05:13.286 [ForkJoinPool-1-worker-2] o.l.e.t.ExperimentJob Measuring ItemItem on null
+INFO  17:05:13.292 [ForkJoinPool-1-worker-2] o.l.e.t.ExperimentJob Testing Algorithm(ItemItem)[Algorithm=ItemItem] on DataSet(null)[DataSet=null] (999 users)
+INFO  17:05:28.578 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 64 in 00:01:06.100
+INFO  17:06:32.874 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 65 in 00:01:04.296
+INFO  17:07:34.706 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 66 in 00:01:01.830
+INFO  17:08:35.632 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 67 in 00:01:00.926
+INFO  17:09:40.538 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 68 in 00:01:04.904
+INFO  17:10:45.835 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 69 in 00:01:05.296
+INFO  17:11:48.856 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 70 in 00:01:03.020
+INFO  17:12:53.380 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 71 in 00:01:04.523
+INFO  17:13:58.533 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 72 in 00:01:05.152
+INFO  17:15:03.055 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 73 in 00:01:04.521
+INFO  17:16:07.416 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 74 in 00:01:04.359
+INFO  17:17:09.156 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 75 in 00:01:01.738
+INFO  17:18:09.706 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 76 in 00:01:00.548
+INFO  17:19:09.533 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 77 in 00:00:59.826
+INFO  17:20:09.390 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 78 in 00:00:59.855
+INFO  17:21:09.279 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 79 in 00:00:59.889
+INFO  17:22:09.667 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 80 in 00:01:00.387
+INFO  17:23:13.570 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 81 in 00:01:03.902
+INFO  17:24:18.324 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 82 in 00:01:04.753
+INFO  17:25:15.259 [ForkJoinPool-1-worker-2] o.l.e.t.ExperimentJob testing users: finished 100 of 999 (10.01%, 12.020s/row, ETA 3h 0m5.672s)
+INFO  17:25:22.219 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 83 in 00:01:03.893
+INFO  17:26:24.646 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 84 in 00:01:02.426
+INFO  17:27:28.015 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 85 in 00:01:03.368
+INFO  17:28:32.762 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 86 in 00:01:04.745
+INFO  17:29:34.214 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 87 in 00:01:01.451
+INFO  17:30:37.873 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 88 in 00:01:03.658
+INFO  17:31:40.829 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 89 in 00:01:02.955
+INFO  17:32:41.589 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 90 in 00:01:00.759
+INFO  17:33:43.915 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 91 in 00:01:02.325
+INFO  17:34:49.152 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 92 in 00:01:05.235
+INFO  17:35:52.560 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 93 in 00:01:03.408
+INFO  17:37:07.054 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 94 in 00:01:14.492
+INFO  17:38:07.750 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 95 in 00:01:00.695
+INFO  17:39:07.608 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 96 in 00:00:59.857
+INFO  17:40:10.189 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 97 in 00:01:02.580
+INFO  17:41:14.886 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 98 in 00:01:04.696
+INFO  17:42:19.363 [ForkJoinPool-1-worker-3] o.l.m.f.FunkSVDModelProvider Finished feature 99 in 00:01:04.476
+INFO  17:42:32.855 [ForkJoinPool-1-worker-3] o.l.e.t.ComponentCache wrote object FunkSVDModel(nu=229027, ni=49716, nf=100) to cache as ace88835b38f6a694c61274efe6dc28e08227ba9 (214503922 bytes)
+INFO  17:42:32.857 [ForkJoinPool-1-worker-3] o.l.e.t.ExperimentJob Built SVDPersMean in 1.761 h
+INFO  17:42:32.858 [ForkJoinPool-1-worker-3] o.l.e.t.ExperimentJob Measuring SVDPersMean on null
+INFO  17:42:32.868 [ForkJoinPool-1-worker-3] o.l.e.t.ExperimentJob Testing Algorithm(SVDPersMean)[Algorithm=SVDPersMean, FeatureCount=100] on DataSet(null)[DataSet=null] (999 users)
+INFO  17:42:43.580 [ForkJoinPool-1-worker-3] o.l.e.t.ExperimentJob testing users: finished 100 of 999 (10.01%, 0.107s/row, ETA  1m36.294s)
+INFO  17:42:54.792 [ForkJoinPool-1-worker-3] o.l.e.t.ExperimentJob testing users: finished 200 of 999 (20.02%, 0.110s/row, ETA  1m27.582s)
+INFO  17:43:05.942 [ForkJoinPool-1-worker-3] o.l.e.t.ExperimentJob testing users: finished 300 of 999 (30.03%, 0.110s/row, ETA  1m17.060s)
+INFO  17:43:16.638 [ForkJoinPool-1-worker-3] o.l.e.t.ExperimentJob testing users: finished 400 of 999 (40.04%, 0.109s/row, ETA  1m5.544s)
+INFO  17:43:27.265 [ForkJoinPool-1-worker-3] o.l.e.t.ExperimentJob testing users: finished 500 of 999 (50.05%, 0.109s/row, ETA 54.287s)
+INFO  17:43:37.035 [ForkJoinPool-1-worker-3] o.l.e.t.ExperimentJob testing users: finished 600 of 999 (60.06%, 0.107s/row, ETA 42.671s)
+INFO  17:43:46.492 [ForkJoinPool-1-worker-3] o.l.e.t.ExperimentJob testing users: finished 700 of 999 (70.07%, 0.105s/row, ETA 31.448s)
+INFO  17:43:57.105 [ForkJoinPool-1-worker-3] o.l.e.t.ExperimentJob testing users: finished 800 of 999 (80.08%, 0.105s/row, ETA 20.954s)
+INFO  17:44:08.275 [ForkJoinPool-1-worker-3] o.l.e.t.ExperimentJob testing users: finished 900 of 999 (90.09%, 0.106s/row, ETA 10.495s)
+INFO  17:44:18.743 [ForkJoinPool-1-worker-3] o.l.e.t.ExperimentJob Tested SVDPersMean in 1.765 min
+INFO  17:44:18.744 [ForkJoinPool-1-worker-3] o.l.e.t.p.RMSEPredictMetric RMSE: 0.6198150241332878
+INFO  17:44:18.745 [ForkJoinPool-1-worker-3] o.l.e.t.p.MAEPredictMetric RMSE: 0.4709600541841634
+INFO  17:44:18.745 [ForkJoinPool-1-worker-3] o.l.e.t.TrainTestExperiment job 2 of 3 (org.lenskit.eval.traintest.ExperimentJob@21b7e54b) finished
+INFO  17:44:53.873 [ForkJoinPool-1-worker-2] o.l.e.t.ExperimentJob testing users: finished 200 of 999 (20.02%, 11.903s/row, ETA 2h38m30.417s)
+INFO  18:03:30.001 [ForkJoinPool-1-worker-2] o.l.e.t.ExperimentJob testing users: finished 300 of 999 (30.03%, 11.656s/row, ETA 2h15m47.329s)
+INFO  18:22:15.965 [ForkJoinPool-1-worker-2] o.l.e.t.ExperimentJob testing users: finished 400 of 999 (40.04%, 11.557s/row, ETA 1h55m22.452s)
+INFO  18:40:47.817 [ForkJoinPool-1-worker-2] o.l.e.t.ExperimentJob testing users: finished 500 of 999 (50.05%, 11.469s/row, ETA 1h35m23.055s)
+INFO  18:58:11.576 [ForkJoinPool-1-worker-2] o.l.e.t.ExperimentJob testing users: finished 600 of 999 (60.06%, 11.297s/row, ETA 1h15m7.558s)
+INFO  19:15:57.752 [ForkJoinPool-1-worker-2] o.l.e.t.ExperimentJob testing users: finished 700 of 999 (70.07%, 11.206s/row, ETA 55m50.705s)
+INFO  19:33:39.136 [ForkJoinPool-1-worker-2] o.l.e.t.ExperimentJob testing users: finished 800 of 999 (80.08%, 11.132s/row, ETA 36m55.329s)
+INFO  19:52:29.045 [ForkJoinPool-1-worker-2] o.l.e.t.ExperimentJob testing users: finished 900 of 999 (90.09%, 11.151s/row, ETA 18m23.933s)
+INFO  20:11:57.168 [ForkJoinPool-1-worker-2] o.l.e.t.ExperimentJob Tested ItemItem in 3.112 h
+INFO  20:11:57.168 [ForkJoinPool-1-worker-2] o.l.e.t.p.RMSEPredictMetric RMSE: 0.8648500032676801
+INFO  20:11:57.169 [ForkJoinPool-1-worker-2] o.l.e.t.p.MAEPredictMetric RMSE: 0.6493257033880365
+INFO  20:11:57.169 [ForkJoinPool-1-worker-2] o.l.e.t.TrainTestExperiment job 3 of 3 (org.lenskit.eval.traintest.ExperimentJob@6c5b10a5) finished
+INFO  20:11:57.169 [main] o.l.e.t.TrainTestExperiment train-test evaluation complete
+INFO  20:11:57.424 [main] org.lenskit.cli.Main If you use LensKit in published research, please see http://lenskit.org/research/
+
+
+BUILD SUCCESSFUL
+
+Total time: 4 hrs 17 mins 52.802 secs
+
+This build could be faster, please consider using the Gradle Daemon: https://docs.gradle.org/2.14/userguide/gradle_daemon.html
